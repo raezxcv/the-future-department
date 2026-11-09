@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <!-- Outer Obsidian Structural Frame with Chamfered Corner -->
+  <path d="M2 2H52L62 12V62H2V2Z" fill="#0A0B0A" stroke="#C6FF00" stroke-width="3"/>
+  <!-- Corner Calibration Notch -->
+  <path d="M51 2V13H62" stroke="#C6FF00" stroke-width="2"/>
+  <!-- Optical Reticle Tick Marks -->
+  <line x1="32" y1="2" x2="32" y2="8" stroke="#C6FF00" stroke-width="2"/>
+  <line x1="32" y1="56" x2="32" y2="62" stroke="#C6FF00" stroke-width="2"/>
+  <line x1="2" y1="32" x2="8" y2="32" stroke="#C6FF00" stroke-width="2"/>
+  <line x1="56" y1="32" x2="62" y2="32" stroke="#C6FF00" stroke-width="2"/>
+  <!-- Architectural Stencil Monogram: T + F + D Interlocked Geometry -->
+  <!-- T Top Bar -->
+  <rect x="12" y="14" width="40" height="6" fill="#C6FF00"/>
+  <!-- Vertical Stem (Shared T/F) -->
+  <rect x="12" y="23" width="7" height="27" fill="#C6FF00"/>
+  <!-- F Mid Crossbar (Acid Green) -->
+  <rect x="22" y="29" width="12" height="6" fill="#C6FF00"/>
+  <!-- D Counterfactual Chamber (Right Block with Chamfered Aperture) -->
+  <path d="M37 23H46L52 29V44L46 50H37V23ZM43 29V44H46V29H43Z" fill="#F4F4F0"/>
+  <!-- Datum Indicator Dot -->
+  <rect x="22" y="43" width="7" height="7" fill="#C6FF00"/>
+</svg>
+

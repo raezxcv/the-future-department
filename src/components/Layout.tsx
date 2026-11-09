@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { NavLink, Link, useLocation, useNavigate } from 'react-router-dom';
 import { INVENTIONS } from '../data/inventions';
 import { Menu, X, ArrowUpRight, AlertTriangle, Compass } from 'lucide-react';
+import { TfdMark } from './TfdLogo';
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -57,13 +58,11 @@ export const Layout: React.FC<LayoutProps> = ({ children }) => {
           {/* Brand Identity Block */}
           <Link
             to="/"
-            className="flex items-center gap-3.5 border-r border-[#262A27] px-4 py-3.5 sm:px-6 hover:bg-[#141615] transition-colors"
+            className="group flex items-center gap-3.5 border-r border-[#262A27] px-4 py-3.5 sm:px-6 hover:bg-[#141615] transition-colors"
           >
-            <div className="flex h-9 w-9 shrink-0 items-center justify-center border border-[#C6FF00] bg-[#C6FF00] font-mono-tech text-sm font-bold text-[#0A0B0A]">
-              TFD
-            </div>
+            <TfdMark className="h-10 w-10 shrink-0 transition-transform duration-150 group-hover:scale-105" />
             <div>
-              <div className="font-display text-sm sm:text-base font-bold tracking-tight text-[#F4F4F0] leading-none">
+              <div className="font-display text-sm sm:text-base font-bold tracking-tight text-[#F4F4F0] leading-none group-hover:text-[#C6FF00] transition-colors">
                 THE FUTURE DEPARTMENT
               </div>
               <div className="mt-1 font-mono-tech text-[10px] tracking-wider text-[#9DA29D]">
@@ -262,9 +261,7 @@ export const Layout: React.FC<LayoutProps> = ({ children }) => {
             {/* Col 1: Institution Statement */}
             <div className="p-6 sm:p-8 md:col-span-5">
               <div className="flex items-center gap-3">
-                <span className="inline-flex h-7 w-7 items-center justify-center bg-[#C6FF00] font-mono-tech text-xs font-bold text-[#0A0B0A]">
-                  TFD
-                </span>
+                <TfdMark className="h-8 w-8 shrink-0" />
                 <span className="font-display text-lg font-bold text-[#F4F4F0]">
                   THE FUTURE DEPARTMENT
                 </span>
