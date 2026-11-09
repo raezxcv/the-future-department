@@ -1,0 +1,136 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --color-obsidian: #0A0B0A;
+    --color-charcoal: #141615;
+    --color-panel: #1B1E1C;
+    --color-concrete: #DCDCD6;
+    --color-plaster: #F4F4F0;
+    --color-steel: #9DA29D;
+    --color-steel-dark: #454945;
+    --color-border-dark: #262A27;
+    --color-border-light: #B8B9B2;
+    --color-acid: #C6FF00;
+    --color-acid-dim: #9ECC00;
+    --color-hazard: #FF4D00;
+
+    --font-display: 'Space Grotesk', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+
+    --ease-out-mech: cubic-bezier(0.23, 1, 0.32, 1);
+    --ease-in-out-mech: cubic-bezier(0.77, 0, 0.175, 1);
+  }
+
+  html {
+    font-family: var(--font-sans);
+    background-color: var(--color-obsidian);
+    color: var(--color-plaster);
+    caret-color: var(--color-acid);
+    scroll-behavior: smooth;
+    text-underline-offset: 4px;
+  }
+
+  ::selection {
+    background-color: var(--color-acid);
+    color: var(--color-obsidian);
+  }
+
+  /* Custom industrial scrollbar */
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #0A0B0A;
+    border-left: 1px solid #262A27;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #2E3330;
+    border: 2px solid #0A0B0A;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #C6FF00;
+  }
+
+  /* Accessible keyboard focus indicator */
+  :focus {
+    outline: none;
+  }
+  :focus-visible {
+    outline: 2px solid var(--color-acid);
+    outline-offset: 2px;
+  }
+}
+
+.font-display {
+  font-family: var(--font-display);
+  letter-spacing: -0.03em;
+}
+
+.font-mono-tech {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+}
+
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Tactile mechanical button press feedback (Emil Kowalski principle) */
+.mech-press {
+  transition: transform 150ms var(--ease-out-mech), background-color 150ms var(--ease-out-mech), color 150ms var(--ease-out-mech), border-color 150ms var(--ease-out-mech);
+}
+.mech-press:active:not(:disabled) {
+  transform: scale(0.97);
+}
+
+/* Crisp shutter clip-path reveal */
+.shutter-reveal {
+  clip-path: inset(0 0 0 0);
+  transition: clip-path 420ms var(--ease-out-mech), transform 420ms var(--ease-out-mech);
+}
+
+/* Technical blueprint grid background pattern */
+.blueprint-surface {
+  background-color: #0D0F0E;
+  background-image:
+    linear-gradient(to right, rgba(198, 255, 0, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(198, 255, 0, 0.05) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+.concrete-surface {
+  background-color: #DCDCD6;
+  color: #0A0B0A;
+}
+
+/* Hover states gated to fine pointer devices */
+@media (hover: hover) and (pointer: fine) {
+  .plate-zoom:hover .plate-img {
+    transform: scale(1.035);
+  }
+}
+
+.plate-img {
+  transition: transform 360ms var(--ease-out-mech), filter 250ms var(--ease-out-mech);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .mech-press:active:not(:disabled) {
+    transform: none;
+  }
+  .plate-zoom:hover .plate-img {
+    transform: none;
+  }
+}
+
